@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { FormControl, Button, Grid, TextField, Box } from '@mui/material';
 import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom';
 
 export default function ChangeName({ userName, handleSubmit }) {
   const [inputVal, setInputVal] = useState('')
@@ -27,7 +28,13 @@ export default function ChangeName({ userName, handleSubmit }) {
       </Grid>
 
       <p>Your name is: {userName}</p>
+      <Link to='/'>Home</Link>
+      {userName && <div>
+        <Link to={`/${userName}`}>UserDetails</Link>
+      </div>}
+
     </Box>
+
   )
 }
 
